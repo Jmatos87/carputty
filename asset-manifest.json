@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/carputty/static/css/main.6f539f00.chunk.css",
+    "main.js": "/carputty/static/js/main.02435bea.chunk.js",
+    "main.js.map": "/carputty/static/js/main.02435bea.chunk.js.map",
+    "runtime-main.js": "/carputty/static/js/runtime-main.be6b2cc0.js",
+    "runtime-main.js.map": "/carputty/static/js/runtime-main.be6b2cc0.js.map",
+    "static/js/2.845f8e62.chunk.js": "/carputty/static/js/2.845f8e62.chunk.js",
+    "static/js/2.845f8e62.chunk.js.map": "/carputty/static/js/2.845f8e62.chunk.js.map",
+    "static/js/3.d56d5287.chunk.js": "/carputty/static/js/3.d56d5287.chunk.js",
+    "static/js/3.d56d5287.chunk.js.map": "/carputty/static/js/3.d56d5287.chunk.js.map",
+    "index.html": "/carputty/index.html",
+    "static/css/main.6f539f00.chunk.css.map": "/carputty/static/css/main.6f539f00.chunk.css.map",
+    "static/js/2.845f8e62.chunk.js.LICENSE.txt": "/carputty/static/js/2.845f8e62.chunk.js.LICENSE.txt",
+    "static/media/500.d4e80e97.gif": "/carputty/static/media/500.d4e80e97.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.be6b2cc0.js",
+    "static/js/2.845f8e62.chunk.js",
+    "static/css/main.6f539f00.chunk.css",
+    "static/js/main.02435bea.chunk.js"
+  ]
+}
