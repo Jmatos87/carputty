@@ -1,0 +1,39 @@
+$background: #FAFBFF;
+$progressFill: #18CBA5;
+$progressEmpty: #B4F1E4;
+body{
+    background-color: $background;
+    .card{
+        background-color: white;
+        margin: 30px auto;
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        border-radius: 8px;
+        box-shadow: rgba(70, 70, 70, 0.2) 0px 3px 1px -2px, rgba(70, 70, 70, 0.14) 0px 2px 2px 0px, rgba(70, 70, 70, 0.12) 0px 1px 5px 0px;
+
+        .progressBar{
+            background-color: $progressFill;
+            height: 20px;
+            border-radius: 8px 8px 0px 0px;
+        }
+        .cardBody{
+            padding: 30px;
+            .inputContainer{
+                display: flex;
+                input{
+                    flex-grow: 3;
+                }
+                button{
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
