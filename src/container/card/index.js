@@ -1,34 +1,66 @@
 import React, { useState } from 'react';
+import ProgressBar from '../../components/ProgressBar'
+import CardBody from '../../components/CardBody'
+
+import bubbleBoyGif from '../../assets/images/500.gif'
 import './styles.scss'
+const fundingGoal = 5000;
+
+const formattedPercentage = donation => {
+    const formattedOutput =  (donation/fundingGoal * 100)
+    return formattedOutput > 100 ? '100%' : formattedOutput + '%'
+}
+
+const fundsToGoal = totalDonation => {
+    const diff = 5000 - totalDonation
+    return diff
+}
 
 function App() {
-    var percent = '10%'
-    var completeProgress = '8px 8px 0px 0px'
-    var partialProgress = '8px 0px 0px 0px'
+    const [bubbleBoy, setBubbleBoy] = useState(false)
+    const [totalDonors, addDonor] = useState(0)
+    const [userDonation, setUserDonation] = useState('')
+    const [totalDonation, addToTotalDontation] = useState(0)
+    const [donationError, setDonatioError] = useState(false)
+
+
+    
+    const percent = formattedPercentage(totalDonation)
+    let remainingFunds = fundsToGoal(totalDonation)
+    let goalReached = false;
+    if(remainingFunds < 0){
+        remainingFunds = remainingFunds * -1
+        goalReached = true;
+    }
+
+    const donationLogic = (userDonation) => {
+        const formattedDonation = parseInt(userDonation)
+        if(formattedDonation === 500){
+            setBubbleBoy(true)
+            setTimeout(()=> setBubbleBoy(false),5000)
+        }
+        if(formattedDonation < 5){
+            //logic for user error
+            setDonatioError(true)
+        }else{
+            addDonor(totalDonors+1)
+            addToTotalDontation(totalDonation + parseInt(formattedDonation))
+        }
+    }
+
+    const cardBodyProps = {goalReached, remainingFunds, totalDonors, userDonation,setDonatioError, setUserDonation, donationLogic, donationError}
+
     return (
         <div className='sandbox'>
-        <div className='card'>
-            <div className='progressBar'>
-                <div className='progressFill' 
-                    style={{width: percent, borderRadius: percent === '100%' ? completeProgress : partialProgress }}
-                />
+            <div className='card'>
+                <ProgressBar percent={percent}/>
+                <CardBody {...cardBodyProps}/>
             </div>
-            <div className='cardBody'>
-                <div className='fundContainer'>
-                    <p><b><sup>$</sup>1,250</b> still needed to fund this project</p>
-                    <div className='arrow-down'></div>
+            {bubbleBoy && (
+                <div className='gifContainer'>
+                    <img src={bubbleBoyGif} />
                 </div>
-                <div className='infoContainer'>
-                    <h2>Only four days left to fund this project</h2>
-                    <p>Join the <b>11</b> other donors who have already supported this project.</p>
-                </div>
-                <div className='inputContainer'>
-                    <span className='dollar'>$</span>
-                    <input type='number'/>
-                    <button>Give Now</button>
-                </div>
-            </div>
-        </div>
+            )}
         </div>
     );
 }

@@ -1,0 +1,18 @@
+$progressEmpty: #B4F1E4;
+$progressFill: #18CBA5;
+
+.progressBar{
+    background-color: $progressEmpty;
+    height: 20px;
+    border-radius: 8px 8px 0px 0px;
+    position: relative;
+    .progressFill{
+        background-color: $progressFill;
+        height: 20px;
+        border-radius: 8px 0px 0px 0px;
+        position: absolute;
+        top:0;
+        left: 0;
+        transition: 1s ease all;
+    }
+}
