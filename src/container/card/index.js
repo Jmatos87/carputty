@@ -58,7 +58,7 @@ function App() {
             </div>
             {bubbleBoy && (
                 <div className='gifContainer'>
-                    <img src={bubbleBoyGif} />
+                    <img src={bubbleBoyGif} alt='easter egg'/>
                 </div>
             )}
         </div>

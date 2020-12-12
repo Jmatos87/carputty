@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './styles.scss'
 
 function CardBody(props) {
     const { goalReached, remainingFunds, totalDonors, userDonation,setDonatioError, setUserDonation, donationLogic, donationError } = props
-    const completeProgress = '8px 8px 0px 0px'
-    const partialProgress = '8px 0px 0px 0px'
 
     return (
         <div className='cardBody'>
